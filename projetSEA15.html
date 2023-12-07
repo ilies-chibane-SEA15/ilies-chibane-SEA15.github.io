@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/projetSEA15.css">
+    <title>Your Data Science Project</title>
+</head>
+
+<body>
+    <header>
+        <h1>Projet Science des données : SEA15</h1>
+    </header>
+
+    <div class="image-selector" style="text-align: right; margin-right: 200px;">
+        <label for="imageSelect">Sélectionnez une image :</label>
+        <select id="imageSelect" onchange="changeImage(this.value)">
+            <option value="data/taux de vélo disponible07-12-2023 15_13_32svg.png">Velo</option>
+            <option value="data/taux de stand disponible07-12-2023 15_13_32svg.png">Stand</option>
+            <option value="data/taux de vélo mécanique disponible07-12-2023 15_13_32svg.png">Velo meca</option>
+            <option value="data/taux de vélos électrique disponible07-12-2023 15_13_32svg.png">Velo elec</option>
+        </select>
+    </div>
+
+    <div class="content">
+        <div class="statistics">
+            <iframe src="data/stats.html" width="100%" height="400px"></iframe>
+        </div>
+
+        <div class="image">
+			<input type="checkbox" id="zoomCheck">
+  			<label for="zoomCheck">
+            	<img id ="displayedImage" src="data/taux de vélo disponible07-12-2023 15_13_32svg.png" alt="Data Science Image">
+			</label>
+        </div>
+    </div>
+
+    <div id="footer">
+        <p>&copy; 2023 CHIBANE Ilies (UPEC). All rights reserved.</p>
+	</div>
+
+    <script>
+        function zoomImage(image) {
+            image.classList.toggle('zoomed-in');
+        }
+
+        function changeImage(selectedImage) {
+            const displayedImage = document.getElementById('displayedImage');
+            displayedImage.src = selectedImage;
+        }
+    </script>
+</body>
+
+</html>
